@@ -1,6 +1,6 @@
 let blackout = document.querySelector('#blackout');
 
-function fadeOutBlack(dur) {
+function fadeOutWhite(dur) {
     blackout.setAttribute('visible', true);
     blackout.setAttribute(
         'animation',
@@ -14,7 +14,7 @@ function fadeOutBlack(dur) {
     );
 }
 
-function fadeInBlack(dur) {
+function fadeInWhite(dur) {
     blackout.setAttribute(
         'animation',
         {
@@ -30,9 +30,9 @@ function fadeInBlack(dur) {
     }, dur);
 }
 
-function blackTransition() {
-    fadeOutBlack(2000);
+function whiteTransition() {
+    fadeOutWhite(2000);
     setTimeout(() => {
-        fadeInBlack(2000);
+        fadeInWhite(2000);
     }, 4000);
 }
