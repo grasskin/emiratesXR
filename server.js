@@ -1,7 +1,16 @@
 const express = require('express');
+var bodyParser = require('body-parser');
 const serverport = 3000;
 
+var state = 'start';
+
 const app = express();
+
+// for parsing application/json
+app.use(bodyParser.json());
+
+// for parsing application/xwww-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/vr', express.static('vr-public'));
 
@@ -19,9 +28,15 @@ app.get('/m', function(req, res) {
     res.redirect('/app/index.html');
 });
 
+app.get('/api', function(req, res) {
+    res.send(state);
+});
+
 app.post('/api', function(req, res) {
-    console.log(req.query);
-    res.send('hi');
+    console.log(req.body);
+    state = req.body.state;
+    res.send('received');
+    console.log(state);
 });
 
 /*

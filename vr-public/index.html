@@ -6,18 +6,30 @@
         <meta name="description" content="EmiratesXR" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="script.js" defer></script>
     </head>
     <body>
         <a-scene background="color: #FAFAFA">
             <a-assets>
                 <!-- AUDIO -->
-                <audio id="welcome" src="audio/welcome.mp3" preload="auto"></audio>
+                <audio
+                    id="welcome"
+                    src="audio/welcome.mp3"
+                    preload="auto"
+                ></audio>
                 <audio id="seat" src="audio/seat.mp3" preload="auto"></audio>
-                <audio id="tooltips" src="audio/tooltips.mp3" preload="auto"></audio>
+                <audio
+                    id="tooltips"
+                    src="audio/tooltips.mp3"
+                    preload="auto"
+                ></audio>
                 <!-- IMG -->
-                <img id="logo" src="img/logo.png">
+                <img id="logo" src="img/logo.png" />
                 <!-- MODELS -->
-                <a-asset-item id="first-class" src="models/seat.obj"></a-asset-item>
+                <a-asset-item
+                    id="first-class"
+                    src="models/seat.obj"
+                ></a-asset-item>
             </a-assets>
 
             <a-camera>
@@ -28,7 +40,12 @@
             <a-entity id="leftHand" hand-controls="left"></a-entity>
             <a-entity id="rightHand" hand-controls="right"></a-entity>
 
-            <a-image position="0 2 -1.5" width=".88" height=".61" src="#logo"></a-image>
+            <a-image
+                position="0 2 -1.5"
+                width=".88"
+                height=".61"
+                src="#logo"
+            ></a-image>
             <a-obj-model src="#first-class"></a-obj-model>
         </a-scene>
     </body>
