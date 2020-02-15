@@ -75,6 +75,19 @@ let changeState = (state) => {
     }
 };
 
+$('#main-scene').append(
+    $('<a-sphere></a-sphere')
+        .attr({
+            id: 'tooltip1',
+            color: 'red',
+            radius: '0.05',
+            opacity: '1',
+            position: '0 1 -2',
+            side: 'double'
+        })
+        .addClass('text')
+);
+
 let text = {
     skywards_miles:
         'Earning Miles quickly is naturally one of the things our frequent flyers really care about. Earn both Tier Miles and Skywards Miles on Emirates and flydubai flights, even on special offers. You can also earn Skywards Miles on flights with our growing alliance of partner airlines, and with exclusive offers from our global partners in hospitality, car hire, finance, lifestyle and retail. \n The best part about earning Miles is deciding how to spend them, and it won’t take you long to reach exciting rewards. You could earn enough Miles for an upgrade after just one long-distance trip. As well as reward flights and upgrades on Emirates, you can spend your Miles with flydubai and our worldwide partners. Choose from flights with our partner airlines, luxury hotel stays, fun-filled family days out, or even tickets to a wide range of sporting and cultural events across the globe. Your Miles are valid for three years, so you’ll have plenty of time if you want to save up for something really special.',

@@ -10,7 +10,7 @@
         <script src="script.js" defer></script>
     </head>
     <body>
-        <a-scene background="color: #FAFAFA">
+        <a-scene background="color: #FAFAFA" id="main-scene">
             <a-entity
                 environment="preset: egypt; dressingAmount: 0; skyType: atmosphere; groundColor: #e1bf92; groundColor2: #e7c496; ground: hills"
             ></a-entity>
@@ -26,7 +26,7 @@
             ></a-sphere>
             <a-sphere
                 id="tooltip1"
-                color="blue"
+                color="red"
                 radius="0.05"
                 opacity="1"
                 position="0 2 -2"
