@@ -1,17 +1,9 @@
-let previousState = undefined;
-let state = undefined;
-let doSomething = false;
+let state, prevState = undefined;
 
-let pullData = () => {
-    $.get('/api').done((data) => {
-        state = data;
-    });
-}
+let pullData = () => { $.get('/api').done((data) => { state = data; }); }
 
 setInterval(pullData, 500);
 setInterval(() => {
-    if (previousState != state) doSomething = true;
-    if (previousState == state) doSomething = false;
-    previousState = state;
+    if (prevState != state) changeState(state);
+    prevState = state;
 }, 1000);
-
