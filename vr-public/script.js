@@ -74,8 +74,18 @@ let changeState = (state) => {
     }
 };
 
-setInterval(pullData, 500);
-setInterval(compareState, 1000);
+$('#main-scene').append(
+    $('<a-sphere></a-sphere')
+        .attr({
+            id: 'tooltip1',
+            color: 'red',
+            radius: '0.05',
+            opacity: '1',
+            position: '0 1 -2',
+            side: 'double'
+        })
+        .addClass('text')
+);
 
 let text = {
     skywards_miles:
