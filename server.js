@@ -4,9 +4,9 @@ const appport = 6000;
 
 const app = express();
 
-app.use('vr', express.static('vr-public'));
+app.use('/vr', express.static('vr-public'));
 
-app.use('app', express.static('app-public'));
+app.use('/app', express.static('app-public'));
 
 app.get('/api/test', (req, res) => {
     res.send('Hi this is working.');
