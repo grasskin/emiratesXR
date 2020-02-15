@@ -19,6 +19,7 @@ $('a-scene').on('loaded', () => {
 let blackout = $('#blackout')[0];
 
 let fadeOut = (dur) => {
+    blackout.setAttribute('visible', true);
     blackout.setAttribute(
         'animation',
         {
@@ -42,6 +43,9 @@ let fadeIn = (dur) => {
         },
         dur
     );
+    setTimeout(() => {
+        blackout.setAttribute('visible', false);
+    }, dur);
 };
 
 let transition = (dur) => {
@@ -145,7 +149,20 @@ for (let tool in tooltips) {
             opacity: '1',
             position: tooltips[tool].position,
             side: 'double',
-            visible: true //tooltips[tool].enabled
+            visible: true,
+            text: {
+                align: 'center',
+                font: 'exo2bold',
+                color: 'black',
+                width: '1.5',
+                opacity: 0,
+                value: tooltips[tool].text
+            }
         })
     );
+    $('#' + tool)[0].addEventListener('click', (evt) => {
+        evt.target.setAttribute('text', {
+            opacity: evt.target.getAttribute('text').opacity == 0 ? 0.7 : 0
+        });
+    });
 }
