@@ -68,7 +68,6 @@ let toggleTooltip = (currTool) => {
 
 let changeState = (state) => {
     console.log(state); // DEBUG
-
     switch (state) {
         case 'lobby':
             // SHOW
@@ -80,6 +79,7 @@ let changeState = (state) => {
             break;
         case 'start':
             transition(4000);
+            $('#plane').remove();
             setTimeout(() => {
                 // HIDE
                 $('.environmentGround')[0].setAttribute('visible', false);
