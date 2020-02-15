@@ -1,7 +1,6 @@
 let blackout = document.querySelector('#blackout');
 
 function fadeOutWhite(dur) {
-    blackout.setAttribute('visible', true);
     blackout.setAttribute(
         'animation',
         {
@@ -12,6 +11,7 @@ function fadeOutWhite(dur) {
         },
         dur
     );
+    setTimeout(() => { blackout.setAttribute('visible', true); }, dur);
 }
 
 function fadeInWhite(dur) {
@@ -25,9 +25,7 @@ function fadeInWhite(dur) {
         },
         dur
     );
-    setTimeout(() => {
-        blackout.setAttribute('visible', false);
-    }, dur);
+    setTimeout(() => { blackout.setAttribute('visible', false); }, dur);
 }
 
 function whiteTransition() {
