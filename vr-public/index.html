@@ -24,7 +24,7 @@
                 position="0 2 0"
                 side="double"
                 scale="3 1 3"
-                visible="true"
+                visible="false"
             ></a-sphere>
             <a-assets>
                 <!-- AUDIO -->
@@ -69,8 +69,16 @@
             </a-camera>
 
             <!-- CONTROLLERS -->
-            <a-entity id="leftHand" hand-controls="left"></a-entity>
-            <a-entity id="rightHand" hand-controls="right"></a-entity>
+            <a-entity
+                id="leftHand"
+                hand-controls="left">
+            </a-entity>
+            <a-entity
+                id="rightHand"
+                line="color: red; opacity: 0.75"
+                hand-controls="right"
+                laser-controls
+            ></a-entity>
 
             <a-image
                 id="logo"

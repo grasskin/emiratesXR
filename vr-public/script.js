@@ -19,8 +19,8 @@ $('a-scene').on('loaded', () => {
 let blackout = $('#blackout')[0];
 
 let fadeOut = (dur) => {
-    blackout.setAttribute(
-        'animation',
+    blackout.setAttribute('visible', true);
+    blackout.setAttribute('animation',
         {
             property: 'material.opacity',
             to: 1,
@@ -42,6 +42,7 @@ let fadeIn = (dur) => {
         },
         dur
     );
+    setTimeout(() => { blackout.setAttribute('visible', false) }, dur);
 };
 
 let transition = (dur) => {
@@ -59,6 +60,7 @@ let changeState = (state) => {
             $('.environmentGround')[0].setAttribute('visible', true);
             $('#logo')[0].setAttribute('visible', true);
             $('#plane')[0].setAttribute('visible', true);
+            $('#seat')[0].setAttribute('visible', false);
             break;
         case 'start':
             transition(4000);
@@ -126,16 +128,28 @@ let tooltips = {
 };
 
 for (let tool in tooltips) {
-    console.log(tool);
     $('#main-scene').append(
         $('<a-sphere></a-sphere').attr({
             id: tool,
             color: 'red',
             radius: '0.05',
             opacity: '1',
-            position: '0 2 -2', //tooltips[tool].position,
+            position: tooltips[tool].position,
             side: 'double',
-            visible: true
+            visible: true,
+            text: {
+                align: 'center',
+                font: 'exo2bold',
+                color: 'black',
+                width: '1.5',
+                opacity: 0,
+                value: tooltips[tool].text
+            }
         })
     );
+    $("#" + tool)[0].addEventListener('click', (evt) => {
+        evt.target.setAttribute('text', {
+            opacity: evt.target.getAttribute('text').opacity == 0 ? 0.7 : 0
+        });
+    });
 }
