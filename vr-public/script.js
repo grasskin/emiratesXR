@@ -104,7 +104,5 @@ let text = {
     entertainment:
         "Fly better with over 4,500 channels on our award winning inflight entertainment system ice.Follow your flight's progress on our moving map, and see the world from 40,000ft with our external cameras. Get weather, news and sport reports and information about your flight to your screen. You can listen to your music, radio or podcasts uninterrupted while you explore.",
     chauffer:
-        'Enjoy our complimentary Chauffeur-drive service in over 75 cities worldwide – simply book online through Manage your booking at least 12 hours before your flight. We’ll collect you from your door and drive you to the airport. When you land, we’ll be there to drive you to your final destination – whether that’s to your home, office or to your favourite restaurant.',
-    lobby:
-        'Emirates Lounge access is exclusive to customers flying in First Class or Business Class. If you’re an Emirates Skywards Gold member travelling in Economy Class, you can also enjoy access to our Business Class Lounges around the globe and Silver members can enter our Business Class Lounges in Dubai. You’ll just need your boarding pass, and you can come and go as you please before your flight – they’re all open 24 hours a day.'
+        'Enjoy our complimentary Chauffeur-drive service in over 75 cities worldwide – simply book online through Manage your booking at least 12 hours before your flight. We’ll collect you from your door and drive you to the airport. When you land, we’ll be there to drive you to your final destination – whether that’s to your home, office or to your favourite restaurant.'
 };
