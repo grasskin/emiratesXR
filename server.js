@@ -2,7 +2,7 @@ const express = require('express');
 var bodyParser = require('body-parser');
 const serverport = 3000;
 
-var state = 'start';
+var state = 'lobby';
 
 const app = express();
 
