@@ -2,39 +2,33 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Hello, WebVR! • A-Frame</title>
-        <meta name="description" content="Hello, WebVR! • A-Frame" />
+        <title>EmiratesXR</title>
+        <meta name="description" content="EmiratesXR" />
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     </head>
     <body>
         <a-scene background="color: #FAFAFA">
-            <a-box
-                position="-1 0.5 -3"
-                rotation="0 45 0"
-                color="#4CC3D9"
-                shadow
-            ></a-box>
-            <a-sphere
-                position="0 1.25 -5"
-                radius="1.25"
-                color="#EF2D5E"
-                shadow
-            ></a-sphere>
-            <a-cylinder
-                position="1 0.75 -3"
-                radius="0.5"
-                height="1.5"
-                color="#FFC65D"
-                shadow
-            ></a-cylinder>
-            <a-plane
-                position="0 0 -4"
-                rotation="-90 0 0"
-                width="4"
-                height="4"
-                color="#7BC8A4"
-                shadow
-            ></a-plane>
+            <a-assets>
+                <!-- AUDIO -->
+                <audio id="welcome" src="audio/welcome.mp3" preload="auto"></audio>
+                <audio id="seat" src="audio/seat.mp3" preload="auto"></audio>
+                <audio id="tooltips" src="audio/tooltips.mp3" preload="auto"></audio>
+                <!-- IMG -->
+                <img id="logo" src="img/logo.png">
+                <!-- MODELS -->
+                <a-asset-item id="first-class" src="models/seat.obj"></a-asset-item>
+            </a-assets>
+
+            <a-camera>
+                <a-cursor></a-cursor>
+            </a-camera>
+
+            <!-- CONTROLLERS -->
+            <a-entity id="leftHand" hand-controls="left"></a-entity>
+            <a-entity id="rightHand" hand-controls="right"></a-entity>
+
+            <a-image position="0 2 -1.5" width=".88" height=".61" src="#logo"></a-image>
+            <a-obj-model src="#first-class"></a-obj-model>
         </a-scene>
     </body>
 </html>
