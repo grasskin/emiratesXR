@@ -29,9 +29,6 @@ let fadeOut = (dur) => {
         },
         dur
     );
-    setTimeout(() => {
-        blackout.setAttribute('visible', true);
-    }, dur);
 };
 
 let fadeIn = (dur) => {
@@ -45,9 +42,6 @@ let fadeIn = (dur) => {
         },
         dur
     );
-    setTimeout(() => {
-        blackout.setAttribute('visible', false);
-    }, dur);
 };
 
 let transition = (dur) => {
