@@ -8,8 +8,6 @@
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
         <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
         <script src="script.js" defer></script>
-        <script src="transitions.js" defer></script>
-        <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body>
         <a-scene background="color: #FAFAFA">
@@ -48,7 +46,7 @@
                     preload="auto"
                 ></audio>
                 <!-- IMG -->
-                <img id="logo" src="img/logo.png" />
+                <img id="emirates-logo" src="img/logo.png" />
                 <!-- MODELS -->
                 <a-asset-item
                     id="seat-obj"
@@ -73,17 +71,18 @@
             <a-entity id="rightHand" hand-controls="right"></a-entity>
 
             <a-image
+                id="logo"
                 position="0 2 -3.5"
                 width="1.72"
                 height="1.22"
-                src="#logo"
+                src="#emirates-logo"
             ></a-image>
-            <a-obj-model
-                position="0 0 0"
-                src="#seat-obj"
-                mtl="#seat-mtl"
-            ></a-obj-model>
-            <a-gltf-model position="1 0 0" src="#seat-glb"></a-gltf-model>
+
+            <a-gltf-model
+                id="seat"
+                position="0 1 0"
+                src="#seat-glb"
+            ></a-gltf-model>
         </a-scene>
     </body>
 </html>
