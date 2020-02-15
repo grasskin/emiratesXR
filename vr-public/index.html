@@ -24,6 +24,12 @@
                 scale="3 1 3"
                 visible="false"
             ></a-sphere>
+            <a-video
+                src="video/flight.mp4"
+                width="16"
+                height="9"
+                position="0 10 -20"
+            ></a-video>
             <a-assets>
                 <!-- AUDIO -->
                 <audio
@@ -67,10 +73,7 @@
             </a-camera>
 
             <!-- CONTROLLERS -->
-            <a-entity
-                id="leftHand"
-                hand-controls="left">
-            </a-entity>
+            <a-entity id="leftHand" hand-controls="left"> </a-entity>
             <a-entity
                 id="rightHand"
                 line="color: red; opacity: 0.75"
