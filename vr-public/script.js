@@ -58,11 +58,11 @@ let transition = (dur) => {
 };
 
 let toggleTooltip = (currTool) => {
-    let enabled;
     for (let tool in tooltips) {
-        enabled = tooltips[tool].enabled;
-        (tool == currTool) ? enabled = 'true' : enabled = 'false';
-        $('#' + tool).attr({ visible: enabled });
+        if (tool == currTool) tooltips[tool].enabled = true;
+        else tooltips[tool].enabled = 'false';
+        $('#' + tool)[0].setAttribute('visible', tooltips[tool].enabled);
+        $('#' + tool)[0].setAttribute('text', { opacity: 1 });
     }
 }
 
@@ -73,7 +73,7 @@ let changeState = (state) => {
             // SHOW
             $('.environmentGround')[0].setAttribute('visible', true);
             $('#logo')[0].setAttribute('visible', true);
-            $('#plane')[0].setAttribute('visible', true);
+            // $('#plane')[0].setAttribute('visible', true);
             // HIDE
             $('#seat')[0].setAttribute('visible', false);
             break;
@@ -84,7 +84,7 @@ let changeState = (state) => {
                 // HIDE
                 $('.environmentGround')[0].setAttribute('visible', false);
                 $('#logo')[0].setAttribute('visible', false);
-                $('#plane')[0].setAttribute('visible', false);
+                // $('#plane')[0].setAttribute('visible', false);
                 // SHOW
                 $('#seat')[0].setAttribute('visible', true);
             }, 2000);
