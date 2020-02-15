@@ -1,0 +1,23 @@
+{
+  "name": "emiratesxr",
+  "version": "1.0.0",
+  "description": "Tartanhacks 2020 submission",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grasskin/emiratesXR.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/grasskin/emiratesXR/issues"
+  },
+  "homepage": "https://github.com/grasskin/emiratesXR#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
