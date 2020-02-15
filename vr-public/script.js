@@ -1,22 +1,10 @@
-previousState = undefined;
-state = undefined;
-doSomething = false;
+let state, prevState = undefined;
 
-function pullData() {
-    $.get('/api').done(function(data) {
-        //console.log('Data Loaded: ' + data);
-        state = data;
-    });
+let pullData = () => { $.get('/api').done((data) => { state = data; }); }
+let compareState = () => {
+    if (prevState != state) changeState(state);
+    prevState = state;
 }
 
 setInterval(pullData, 500);
-setInterval(() => {
-    if (previousState != state) doSomething = true;
-    if (previousState == state) doSomething = false;
-    if (doSomething) {
-        console.log('do it: ' + state);
-    }
-    previousState = state;
-    //console.log(state);
-}, 1000);
-
+setInterval(compareState, 1000);
