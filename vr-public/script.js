@@ -149,15 +149,10 @@ for (let tool in tooltips) {
             opacity: '1',
             position: tooltips[tool].position,
             side: 'double',
-            visible: true,
-            text: {
-                align: 'center',
-                font: 'exo2bold',
-                color: 'black',
-                width: '1.5',
-                opacity: 0,
-                value: tooltips[tool].text
-            }
+            visible: false,
+            text:
+                'align: center; font: exo2bold; color: black; baseline: bottom; width: 1.5; opacity: 0; value: ' +
+                tooltips[tool].text
         })
     );
     $('#' + tool)[0].addEventListener('click', (evt) => {
