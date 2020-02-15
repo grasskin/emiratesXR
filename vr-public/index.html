@@ -60,6 +60,10 @@
                     id="seat-mtl"
                     src="models/seat.mtl"
                 ></a-asset-item>
+                <a-asset-item
+                    id="plane-glb"
+                    src="models/plane.glb"
+                ></a-asset-item>
             </a-assets>
 
             <a-camera>
@@ -78,7 +82,14 @@
                 src="#emirates-logo"
             ></a-image>
 
-            <a-gltf-model id="seat" position="0 0.7 0" src="#seat-glb"></a-gltf-model>
+            <a-gltf-model id="seat" position="0 0.7 0" src="#seat-glb" visible="false"></a-gltf-model>
+            <a-gltf-model
+                id="plane"
+                rotation="0 45 0"
+                position="-6 3 12"
+                scale="6 6 6"
+                src="#plane-glb"
+            ></a-gltf-model>
         </a-scene>
     </body>
 </html>

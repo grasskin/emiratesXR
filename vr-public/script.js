@@ -69,13 +69,11 @@ let changeState = (state) => {
             setTimeout(() => {
                 $('.environmentGround')[0].setAttribute('visible', false);
                 $('#logo')[0].setAttribute('visible', false);
+                $('#seat')[0].setAttribute('visible', true);
             }, 2000);
             break;
     }
 };
-
-setInterval(pullData, 500);
-setInterval(compareState, 1000);
 
 let text = {
     skywards_miles:
