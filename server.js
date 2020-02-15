@@ -1,6 +1,5 @@
 const express = require('express');
 const serverport = 3000;
-const appport = 6000;
 
 const app = express();
 
@@ -10,6 +9,19 @@ app.use('/app', express.static('app-public'));
 
 app.get('/api/test', (req, res) => {
     res.send('Hi this is working.');
+});
+
+app.get('/', function(req, res) {
+    res.redirect('/vr/index.html');
+});
+
+app.get('/m', function(req, res) {
+    res.redirect('/app/index.html');
+});
+
+app.post('/api', function(req, res) {
+    console.log(req.query);
+    res.send('hi');
 });
 
 /*
