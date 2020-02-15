@@ -19,3 +19,4 @@ setInterval(() => {
     previousState = state;
     //console.log(state);
 }, 1000);
+
