@@ -1,10 +1,14 @@
 const startButton = () => {
-    $('button').each((i, item) => {(item.id == 'start') ? $(item).hide() : $(item).show();});
-}
+    $('button').each((i, item) => {
+        item.id == 'start' ? $(item).hide() : $(item).show();
+    });
+};
 
 const restartButton = () => {
-    $('button').each((i, item) => {(item.id == 'start') ? $(item).show() : $(item).hide();});
-}
+    $('button').each((i, item) => {
+        item.id == 'start' ? $(item).show() : $(item).hide();
+    });
+};
 
 $('button').each((i, item) => {
     $(item).click(() => {
