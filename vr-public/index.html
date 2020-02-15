@@ -32,6 +32,7 @@
             ></a-video>
             <a-assets>
                 <!-- AUDIO -->
+                <!--
                 <audio
                     id="welcome"
                     src="audio/welcome.mp3"
@@ -47,20 +48,18 @@
                     src="audio/tooltips.mp3"
                     preload="auto"
                 ></audio>
+                -->
+                <audio
+                    id="music-mp3"
+                    src="audio/music.mp3"
+                    preload="auto"
+                ></audio>
                 <!-- IMG -->
                 <img id="emirates-logo" src="img/logo.png" />
                 <!-- MODELS -->
                 <a-asset-item
-                    id="seat-obj"
-                    src="models/seat.obj"
-                ></a-asset-item>
-                <a-asset-item
                     id="seat-glb"
                     src="models/seat.glb"
-                ></a-asset-item>
-                <a-asset-item
-                    id="seat-mtl"
-                    src="models/seat.mtl"
                 ></a-asset-item>
                 <a-asset-item
                     id="plane-glb"
@@ -71,6 +70,8 @@
             <a-camera>
                 <a-cursor></a-cursor>
             </a-camera>
+
+            <a-sound id="music" src="#music-mp3" position="0 1 0" loop="true"></a-sound>
 
             <!-- CONTROLLERS -->
             <a-entity id="leftHand" hand-controls="left"> </a-entity>
