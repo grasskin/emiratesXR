@@ -24,12 +24,6 @@
                 scale="3 1 3"
                 visible="false"
             ></a-sphere>
-            <a-video
-                src="video/flight.mp4"
-                width="16"
-                height="9"
-                position="0 10 -20"
-            ></a-video>
             <a-assets>
                 <!-- AUDIO -->
                 <!--
@@ -54,12 +48,13 @@
                     src="audio/music.mp3"
                     preload="auto"
                 ></audio>
+                <video id="flight-mp4" autoplay loop="true" src="video/flight.mp4"></video>
                 <!-- IMG -->
                 <img id="emirates-logo" src="img/logo.png" />
                 <!-- MODELS -->
                 <a-asset-item
                     id="seat-glb"
-                    src="models/seat.glb"
+                    src="models/seat.gltf"
                 ></a-asset-item>
                 <a-asset-item
                     id="plane-glb"
@@ -70,6 +65,15 @@
             <a-camera>
                 <a-cursor></a-cursor>
             </a-camera>
+
+            <a-video
+                id="video"
+                src="#flight-mp4"
+                width="0.8"
+                height="0.45"
+                position="0.090 1.325 -1"
+                visible="true"
+            ></a-video>
 
             <a-sound id="music" src="#music-mp3" position="0 1 0" loop="true"></a-sound>
 

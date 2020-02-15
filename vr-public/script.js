@@ -76,6 +76,7 @@ let changeState = (state) => {
             // $('#plane')[0].setAttribute('visible', true);
             // HIDE
             $('#seat')[0].setAttribute('visible', false);
+            // $('#video')[0].setAttribute('visible', false);
             break;
         case 'start':
             transition(4000);
@@ -87,6 +88,7 @@ let changeState = (state) => {
                 // $('#plane')[0].setAttribute('visible', false);
                 // SHOW
                 $('#seat')[0].setAttribute('visible', true);
+                // $('#video')[0].setAttribute('visible', true);
             }, 2000);
             break;
         case 'skywards_miles':
