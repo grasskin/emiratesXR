@@ -8,7 +8,12 @@ let pullData = () => {
     });
 }
 
-$.post('/api', { state: 'lobby' }).done((d) => { setInterval(pullData, 500); });
+// Once the scene loads, initialize our current state as the lobby
+$('a-scene').on('loaded', () => {
+    $.post('/api', { state: 'lobby' }).done((data) => {
+        setInterval(pullData, 500);
+    });
+});
 
 let blackout = $('#blackout')[0];
 
@@ -42,7 +47,7 @@ let transition = (dur) => {
 }
 
 let changeState = (state) => {
-    console.log(state);
+    console.log(state); // DEBUG
     switch (state) {
         case 'lobby':
             $('.environmentGround')[0].setAttribute('visible', true);
