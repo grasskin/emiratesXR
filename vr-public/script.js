@@ -70,6 +70,7 @@ let changeState = (state) => {
     console.log(state); // DEBUG
     switch (state) {
         case 'lobby':
+            toggleTooltip('');
             // SHOW
             $('.environmentGround')[0].setAttribute('visible', true);
             $('#logo')[0].setAttribute('visible', true);
@@ -85,7 +86,6 @@ let changeState = (state) => {
                 // HIDE
                 $('.environmentGround')[0].setAttribute('visible', false);
                 $('#logo')[0].setAttribute('visible', false);
-                // $('#plane')[0].setAttribute('visible', false);
                 // SHOW
                 $('#seat')[0].setAttribute('visible', true);
                 // $('#video')[0].setAttribute('visible', true);
@@ -183,10 +183,10 @@ for (let tool in tooltips) {
             color: '#' + tooltips[tool].position.color,
             radius: '0.001',
             opacity: '1',
-            position: '0.1 1.5 -0.8',
+            position: '0.1 1.0 -0.8',
             side: 'double',
             visible: false,
-            text: `align: center; font: exo2bold; color: black; baseline: bottom; width: 0.6; opacity: 0; value: ${tooltips[tool].text}`
+            text: `align: center; font: exo2bold; color: white; baseline: bottom; width: 0.6; opacity: 0; value: ${tooltips[tool].text}`
         })
     );
     $('#' + tool)[0].addEventListener('click', (evt) => {
